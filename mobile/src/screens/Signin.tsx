@@ -6,7 +6,7 @@ import Logo from "../assets/logo.svg";
 import { Button } from "../components/Button";
 
 export function SignIn() {
-  const { signIn, user } = useAuth();
+  const { signIn, isUserLoading } = useAuth();
 
   return (
     <Center flex={1} bgColor="gray.900" p={8}>
@@ -17,6 +17,8 @@ export function SignIn() {
         variant="SECONDARY"
         leftIcon={<Icon as={Fontisto} name="google" color="white" size="sm" />}
         onPress={signIn}
+        isLoading={isUserLoading}
+        _loading={{ _spinner: { color: "white" } }}
       />
       <Text textAlign="center">
         Não utilizamos nenhuma informação além {"\n"} do seu e-mail para criação
