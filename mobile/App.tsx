@@ -7,13 +7,10 @@ import {
 } from "@expo-google-fonts/roboto";
 import { THEME } from "./src/styles/theme";
 
-import { Loading } from "./src/components/Loading";
-import { SignIn } from "./src/screens/SignIn";
-// import { New } from "./src/screens/New";
-// import { Find } from "./src/screens/Find";
-// import { Pools } from "./src/screens/Pools";
-
 import { AuthContextProvider } from "./src/context/AuthContext";
+
+import { Loading } from "./src/components/Loading";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,7 +26,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <SignIn /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
